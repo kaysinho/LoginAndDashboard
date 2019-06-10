@@ -14,6 +14,7 @@ import { CommonModule } from '@angular/common';
 import { SessionService } from './services/session.service';
 import { EditUserComponent } from './pages/home/components/edit-user/edit-user.component';
 import { HomeModule } from './pages/home/home.module';
+import { PermitGuard } from './guards/permit.guard';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { HomeModule } from './pages/home/home.module';
     AppRoutingModule, ReactiveFormsModule,
     FormsModule, HttpClientModule
   ],
-  providers: [AuthService, AuthGuard, SessionService],
+  providers: [AuthService, AuthGuard, SessionService, PermitGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { User } from 'src/app/classes/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-data',
@@ -9,13 +10,10 @@ import { User } from 'src/app/classes/user';
 })
 export class UserDataComponent implements OnInit {
   users: Array<User> = new Array();
-  constructor(private userService:AuthService) { }
+  constructor(private userService: AuthService) { }
 
   ngOnInit() {
-    this.userService.getAllUsers()
-      .subscribe((data:any)=>{
-        this.users = data.data
-      })
+    this.users = this.userService.users
   }
 
 }

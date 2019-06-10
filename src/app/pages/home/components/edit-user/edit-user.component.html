@@ -1,3 +1,39 @@
-<p>
-  edit-user works!
-</p>
+<div class="row">
+  <form class="col s12" [formGroup]="userForm">
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="first_name" [attr.disabled]="adminRole" formControlName="name" name="name" type="text" class="validate">
+        <label for="first_name">Nombre</label>
+      </div>
+      <div class="input-field col s6">
+        <input id="country" type="text" [attr.disabled]="adminRole" formControlName="country" name="country" class="validate">
+        <label for="country">País</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="description" formControlName="description" name="description" type="text" class="validate">
+        <label for="description">Descripción</label>
+      </div>
+      <div class="input-field col s6">
+        <input id="last_name" type="text" [attr.disabled]="adminRole" formControlName="role" name="role" class="validate">
+        <label for="last_name">Rol</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="username" type="text" [attr.disabled]="adminRole" formControlName="username" name="username" class="validate">
+        <label for="username">Username</label>
+      </div>
+      <div class="input-field col s6">
+        <input id="password" type="password" [attr.disabled]="adminRole" formControlName="password" name="password" class="validate">
+        <label for="password">Contraseña</label>
+      </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s6 offset-s6">
+          <button class="btn cyan" (click)="save()">Guardar</button>
+        </div>
+    </div>
+  </form>
+</div>

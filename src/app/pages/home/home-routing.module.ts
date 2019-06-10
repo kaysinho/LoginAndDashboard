@@ -4,6 +4,7 @@ import { HomeComponent } from './home.component';
 import { AuthGuard } from 'src/app/guards/auth.guard';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { UserDataComponent } from './components/user-data/user-data.component';
+import { PermitGuard } from 'src/app/guards/permit.guard';
 
 const routes: Routes = [
 {
@@ -19,7 +20,7 @@ const routes: Routes = [
     {
       path: 'edit-user/:username',
       component: EditUserComponent  ,
-      canActivate: [AuthGuard]
+      canActivate: [AuthGuard, PermitGuard]
     }
 
   ]
