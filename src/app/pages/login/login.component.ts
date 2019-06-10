@@ -34,7 +34,8 @@ export class LoginComponent implements OnInit {
         }
         let setSession: boolean = await this.session.set(this.userForm.get('username').value)
         if (setSession){
-          this.router.navigate(['/home'])
+          console.log('Llega')
+          this.router.navigate(['/home/all-users'])
         }
         
       }, (err)=>{

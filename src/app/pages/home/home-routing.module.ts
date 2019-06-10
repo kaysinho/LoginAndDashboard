@@ -3,18 +3,27 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
 import { AuthGuard } from 'src/app/guards/auth.guard';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
+import { UserDataComponent } from './components/user-data/user-data.component';
 
 const routes: Routes = [
 {
-  path: 'home',
+  path: '',
   component: HomeComponent,
-  canActivate: [AuthGuard]
-},
-{
-  path: 'edit-user/username',
-  component: EditUserComponent  ,
-  canActivate: [AuthGuard]
-}];
+  canActivate: [AuthGuard],
+  children:[
+    {
+      path: 'all-users',
+      component: UserDataComponent  ,
+      canActivate: [AuthGuard]
+    },
+    {
+      path: 'edit-user/username',
+      component: EditUserComponent  ,
+      canActivate: [AuthGuard]
+    }
+
+  ]
+},];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

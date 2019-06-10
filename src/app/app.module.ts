@@ -23,7 +23,7 @@ import { HomeModule } from './pages/home/home.module';
   imports: [
     BrowserModule, CommonModule,
     AppRoutingModule, ReactiveFormsModule,
-    FormsModule, HttpClientModule, HomeModule
+    FormsModule, HttpClientModule
   ],
   providers: [AuthService, AuthGuard, SessionService],
   bootstrap: [AppComponent]
