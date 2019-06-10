@@ -14,7 +14,7 @@
       <td>{{user.country}}</td>
       <td>{{user.description}}</td>
       <td>
-          <a class="btn-floating btn-small waves-effect waves-light cyan modal-trigger" [routerLink]="['/edit-user']" title="Editar">
+          <a class="btn-floating btn-small waves-effect waves-light cyan modal-trigger" [routerLink]="['/home/edit-user', user.username]" title="Editar">
             <i class="material-icons">create</i>
           </a>
       </td>
