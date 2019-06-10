@@ -12,5 +12,5 @@ import { CommonModule } from '@angular/common';
     HomeComponent,
     UserDataComponent,
     EditUserComponent
-  ], imports:[HomeRoutingModule, BrowserModule, FormsModule, ReactiveFormsModule, CommonModule]})
+  ], imports:[HomeRoutingModule, FormsModule, ReactiveFormsModule, CommonModule]})
 export class HomeModule { }
