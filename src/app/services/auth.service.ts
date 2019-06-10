@@ -12,6 +12,10 @@ export class AuthService {
     
   }
 
+  getAllUsers():Observable<Array<User>>{
+    return this.http.get<Array<User>>('./assets/data/data1.json')
+  }
+
   login(username:string, password:number):Observable<boolean>{
     return new Observable((observer)=>{
       this.http.get<Array<User>>('./assets/data/data1.json')

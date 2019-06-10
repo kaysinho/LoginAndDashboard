@@ -1,0 +1,24 @@
+<table>
+  <thead>
+    <tr>
+        <th>Nombre</th>
+        <th>Pais</th>
+        <th>Descripción</th>
+        <th>Acciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{user.name}}</td>
+      <td>{{user.country}}</td>
+      <td>{{user.description}}</td>
+      <td>
+          <a class="btn-floating btn-small waves-effect waves-light cyan modal-trigger"  [routerLink]="['/edit-user']" title="Editar">
+            <i class="material-icons">create</i>
+          </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+

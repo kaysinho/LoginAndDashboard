@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SessionService } from 'src/app/services/session.service';
+declare var M:any
 
 @Component({
   selector: 'app-home',
@@ -7,8 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { 
-    console.log('Llega')
+  constructor(private session:SessionService) { 
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems, {});
   }
 
   ngOnInit() {
