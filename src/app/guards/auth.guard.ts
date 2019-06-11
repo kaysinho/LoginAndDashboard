@@ -14,7 +14,6 @@ export class AuthGuard implements  CanActivate {
   canActivate():boolean{
     if (this.session.get().username.length==0){
       this.router.navigate(['/login'])
-      console.log('No hay session')
       return false
     }
 

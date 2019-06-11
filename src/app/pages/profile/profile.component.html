@@ -1,0 +1,54 @@
+<div class="white home">
+  <nav class="cyan darken-1">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Bienvenido {{sessionService.get().name}}</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li [routerLinkActive]="'active'"><a [routerLink]="['/home/all-users']">Usuarios</a></li>
+        <li [routerLinkActive]="'active'"><a [routerLink]="['/profile']">Perfil</a></li>
+        <li [routerLinkActive]="'active'"><a [routerLink]="['/login']">Salir</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <form class="col s12" [formGroup]="userForm">
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="first_name" [attr.disabled]="sessionService.get().role=='USER'" formControlName="name" name="name" type="text" class="validate">
+            <label for="first_name">Nombre</label>
+          </div>
+          <div class="input-field col s6">
+            <input id="country" type="text" formControlName="country" name="country" class="validate">
+            <label for="country">País</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="description" formControlName="description" name="description" type="text" class="validate">
+            <label for="description">Descripción</label>
+          </div>
+          <div class="input-field col s6">
+            <input id="last_name" type="text" [attr.disabled]="sessionService.get().role=='USER'" formControlName="role" name="role" class="validate">
+            <label for="last_name">Rol</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="username" type="text" [attr.disabled]="sessionService.get().role=='USER'" formControlName="username" name="username" class="validate">
+            <label for="username">Username</label>
+          </div>
+          <div class="input-field col s6">
+            <input id="password" type="password" [attr.disabled]="sessionService.get().role=='USER'" formControlName="password" name="password" class="validate">
+            <label for="password">Contraseña</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6 offset-s6">
+            <button class="btn cyan" (click)="save()">Guardar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>

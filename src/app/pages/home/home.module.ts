@@ -6,6 +6,7 @@ import { UserDataComponent } from './components/user-data/user-data.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { CommonModule } from '@angular/common';
+import { ProfileComponent } from '../profile/profile.component';
 
 @NgModule({
   declarations: [

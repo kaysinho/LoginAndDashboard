@@ -30,15 +30,19 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.userForm.get('username').value, this.userForm.get('password').value)
       .subscribe(async (data:boolean)=>{
         if (!data){
-          alert('Datos invalidos' + data)
+          alert('Datos invalidos')
         }
         let setSession: boolean = await this.session.set(this.userForm.get('username').value)
         if (setSession){
-          this.router.navigate(['/home/all-users'])
+          if (this.session.get().role=='USER'){
+            this.router.navigate(['/profile'])
+          }else{
+            this.router.navigate(['/home/all-users'])
+          }
         }
         
       }, (err)=>{
-        alert('Ocurrió un error!' + err)
+        alert('Ocurrió un error! ' + err)
       })
   }
 
